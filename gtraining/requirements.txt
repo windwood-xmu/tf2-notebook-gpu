@@ -1,0 +1,13 @@
+certifi>=2019.9.11
+kiwisolver>=1.1.0
+matplotlib>=3.1.1
+Pillow>=6.1.0
+pipenv>=2018.11.26
+pyparsing>=2.4.2
+python-dateutil>=2.8.0
+PyYAML>=5.1.2
+tb-nightly>=1.15.0a20190806
+tf-estimator-nightly>=1.14.0.dev2019080601
+tqdm>=4.36.1
+virtualenv>=16.7.5
+virtualenv-clone>=0.5.3
