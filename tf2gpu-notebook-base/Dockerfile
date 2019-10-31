@@ -14,6 +14,11 @@ ARG NB_GID="100"
 
 USER root
 
+COPY aliyun.list /etc/apt/sources.list
+COPY hosts-chn /tmp/
+COPY tuna.condarc /tmp/.condarc
+RUN cat /tmp/hosts-chn >> /etc/hosts
+
 # Install all OS dependencies for notebook server that starts but lacks all
 # features (e.g., download as all possible file formats)
 ENV DEBIAN_FRONTEND noninteractive
@@ -63,6 +68,8 @@ RUN echo "auth requisite pam_deny.so" >> /etc/pam.d/su && \
 
 USER $NB_UID
 WORKDIR $HOME
+
+RUN cp /tmp/.condarc $CONDA_DIR
 
 # Setup work directory for backward-compatibility
 RUN mkdir /home/$NB_USER/work && \
